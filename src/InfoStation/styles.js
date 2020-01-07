@@ -19,6 +19,3 @@ export const Item = styled.View`
     overflow: hidden;
     border-radius: 15;
 `;
-
-export const ItemText = styled.Text`
-`;
