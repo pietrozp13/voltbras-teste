@@ -7,27 +7,18 @@ export const ItemContainer = styled(Animated.View)`
     background-color: transparent;
     flex-direction: row;
     position: absolute;
-    top: 380px;
+    top: 490px;
 `;
 
 export const Item = styled.View`
     width: ${screen.width};
-    height: ${screen.height};
-    background-color: gray;
+    height: ${screen.height + 20};
+    background-color: #fff;
     margin-left: 10;
     margin-right: 10;
-    opacity: 0.85;
     overflow: hidden;
-    border-radius: 20;
+    border-radius: 15;
 `;
 
 export const ItemText = styled.Text`
-    width: ${screen.width};
-    height: ${screen.height};
-    background-color: gray;
-    margin-left: 10;
-    margin-right: 10;
-    opacity: 0.85;
-    overflow: hidden;
-    border-radius: 20;
 `;
