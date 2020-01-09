@@ -29,11 +29,11 @@ export default function MapViewStations({ stations, setSelectedStation }) {
             longitudeDelta: 0.0421,
           }}
         >
-          {stations.data.map((station)=> {
+          {stations && stations.data.map((station)=> {
             return(
               <Marker
                 key={station.id}
-                onPress={()=> { setSelectedStation(station)}}
+                onPress={() => setSelectedStation(station)}
                 coordinate={{
                   latitude: station.geo.lat,
                   longitude: station.geo.long,
