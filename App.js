@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
+import { StyleSheet, View, SafeAreaView, StatusBar, Text } from 'react-native';
 import axios from 'axios';
 
 import MapViewStations from "./src/MapViewStations/MapViewStations";
@@ -24,9 +24,10 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.containerSafe}>
-      <StatusBar hidden={true} translucent={true} />  
-      {stations &&
-        <View style={styles.container}>
+      <StatusBar hidden={true} translucent={true} />
+      <View style={styles.container}>
+      {stations ? (
+        <React.Fragment>
           <MapViewStations
             stations={stations}
             setSelectedStation={setSelectedStation}
@@ -35,8 +36,11 @@ export default function App() {
             selectedStation={selectedStation}
             setSelectedStation={setSelectedStation}
           />
-        </View>
-      }
+        </React.Fragment>
+      ) : (
+        <Text>Carregando ...</Text>
+      )}
+      </View>
     </SafeAreaView>
   );
 }
