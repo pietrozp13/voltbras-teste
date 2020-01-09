@@ -12,7 +12,9 @@ const MoneyAndTimeContainer = styled.View`
     flex-direction: row;
     padding-top: 10px;
     padding-bottom: 10px;
-    justify-content: space-around;
+    padding-left: 5px;
+    padding-right: 5px;
+    justify-content: space-between;
 `;
 
 const TitleContainer = styled.Text`
@@ -33,7 +35,17 @@ const IconTextContainer = styled.View`
     align-items: center;
 `;
 
-export default function InformationArea({ name, local, city, price, time, description }) {
+const ImagesContainer = styled.ScrollView`
+    padding: 5px;
+`;
+
+const ImageItem = styled.Image`
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+`;
+
+export default function InformationArea({ name, local, city, price, time, description, images }) {
 
     function getPriceLabel (price) {
         if (price > 0) return `R$ ${price}/kWh`
@@ -56,6 +68,17 @@ export default function InformationArea({ name, local, city, price, time, descri
                 </IconTextContainer>
             </MoneyAndTimeContainer>
             <InfoContainer>{description}</InfoContainer>
+            <ImagesContainer horizontal={true}>
+                {images && images.map((imgSrc) => {
+                    return (
+                        <ImageItem
+                            key={imgSrc}
+                            source={{ uri: imgSrc }}
+                        />
+                    )
+                })
+                }
+            </ImagesContainer>
         </InformationAreaContainer>
     )
 }

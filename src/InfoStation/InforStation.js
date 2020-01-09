@@ -56,6 +56,7 @@ export default function InforStation({ selectedStation, setSelectedStation }) {
                 price={selectedStation.energyPrice}
                 time={selectedStation.location.openHours}
                 description={selectedStation.location.description}
+                images={selectedStation.location.images}
               />
           </Item>
         }
